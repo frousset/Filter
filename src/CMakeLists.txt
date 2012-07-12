@@ -1,0 +1,16 @@
+CMAKE_MINIMUM_REQUIRED(VERSION 2.8)
+
+# Configuration du projet
+PROJECT( filters )
+
+FIND_PACKAGE(ITK)
+IF(ITK_FOUND) 
+  INCLUDE(${ITK_USE_FILE})
+ELSE(ITK_FOUND) 
+  MESSAGE(FATAL_ERROR
+	  "ITK not found")
+ENDIF(ITK_FOUND)
+
+ADD_EXECUTABLE( filters main.cxx filter.h filter.cxx )
+
+TARGET_LINK_LIBRARIES(filters ITKCommon ITKIO)
