@@ -8,7 +8,7 @@ filter::filter()
    
     for (int i=0; i<6; i++)
     {
-      if(i<3) radius_mask[i]=0;
+      if(i<3) radius_mask[i]=1;
       T[i]=0;
     }
 }
